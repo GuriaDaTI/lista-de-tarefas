@@ -6,6 +6,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0 20px; /* Adicionado padding para dispositivos móveis */
+    box-sizing: border-box; /* Para incluir o padding dentro da largura total */
 }
 
 .container {
@@ -13,17 +15,20 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 100%;
+    max-width: 400px; /* Definindo largura máxima */
 }
 
 h1 {
     text-align: center;
     color: #333;
+    font-size: 24px; /* Ajuste de tamanho de fonte */
 }
 
 .input-container {
     display: flex;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Permitir quebra de linha em dispositivos menores */
 }
 
 #new-task {
@@ -32,6 +37,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    margin-bottom: 10px; /* Adicionado para dar espaço em dispositivos móveis */
 }
 
 button {
@@ -43,15 +49,18 @@ button {
     cursor: pointer;
     margin-left: 5px;
     font-size: 16px;
+    margin-bottom: 10px; /* Adicionado para dar espaço em dispositivos móveis */
+    flex: none; /* Para evitar que o botão ocupe o mesmo espaço do input */
 }
 
 button:hover {
-    background-color: #000000;
+    background-color: #4cae4c;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
@@ -61,6 +70,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Permitir quebra de linha em dispositivos menores */
 }
 
 li:last-child {
@@ -78,4 +88,23 @@ li .delete-btn {
 
 li .delete-btn:hover {
     background-color: #c9302c;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px; /* Tamanho de fonte menor para dispositivos móveis */
+    }
+
+    #new-task {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .container {
+        padding: 15px;
+    }
 }
